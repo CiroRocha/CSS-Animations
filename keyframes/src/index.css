@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.tuna {
+  /* use the timing function steps() to chunk the animation into 12 equal pieces */
+  background: url(http://stash.rachelnabors.com/animation-workshop/sprite_catwalk.png) 0 0 no-repeat;
+  height: 200px;
+  width: 400px;
+  margin: 100px auto 0;
+  animation: tuna 1.3s steps(11) infinite; /* steps take an extra frame, defaults to eat the last frame so insteadof the 12 frames avaliable at the spritesheet, only use 11, this way math is easier to do */
+}
+
+/* Don't forget: You'll need an @keyframes block to change the background image's position! */
+@keyframes tuna {
+  0% {
+    background-position-y: 0;
+  }
+
+  100% {
+    background-position-y: -2200px;
+  }
+}
+
+p {text-align: center;}
