@@ -9,27 +9,22 @@ function App() {
   const handleScroll = () => {
     const position = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100)
 
-    if(position >= 0 && position < 10) {
-        setAliceMood('curious')
-        console.log('this in')
-    } else if(position >= 10 && position < 20) {
-        setAliceMood('bored')
-        console.log('this in')
+    if(position >= 10 && position < 20) {
+      setAliceMood('curious')
     } else if(position >= 20 && position < 30) {
-        setAliceMood('sleeping')
-        console.log('this in')
+        setAliceMood('bored')
     } else if(position >= 30 && position < 40) {
-        setAliceMood('waking')
-        console.log('this in')
+        setAliceMood('sleeping')
     } else if(position >= 40 && position < 50) {
+        setAliceMood('waking')
+    } else if(position >= 50 && position < 60) {
         setAliceMood('weird')
-        console.log('this in')
-    } else if(position >= 50) {
+    } else if(position >= 60) {
         setAliceMood('jolted')
-        console.log('this in')
+    } else {
+      setAliceMood('frightened')
     }
 
-    console.log(position, aliceMood);
     setScrollPosition(position)
   }
 
@@ -47,7 +42,7 @@ function App() {
       <div class="wrapper">
         <div class="alice-falling" style={{ top: `${scrollPosition}vh` }} ></div>
         {/* Now make Tuna "fall" from the bottom. See if you can expose him as the Cheshire cat he is! */}
-        <div class="tuna-falling" >
+        <div class="tuna-falling" style={{ bottom: `${scrollPosition}vh` }} >
           <img class="black-tuna" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/tuna-alice3.png" alt='' />
           <img class="tuna-glow" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/tuna-alice2.png" alt='' style={{ opacity: `${scrollPosition}%` }} />
           <img class="real-tuna" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/641/tuna-alice1.png" alt='' />
